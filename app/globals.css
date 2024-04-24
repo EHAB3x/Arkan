@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+@font-face {
+  font-family: 'Almarai';
+  src: url('../public/fonts/ArbFONTS-Almarai-Regular.ttf') format('truetype');
+}
 
 :root {
   --background-color: #F9F9F9;
@@ -13,11 +16,28 @@
   --nav-text-color: #2D4768;
   --border-color: #DADADA;
   --price-color:#3FD06F;
+  --header-color:#252525;
   --details-head:#2C4768;
   --details-nav:#2B4868;
   font-family: "Almarai", sans-serif;
 }
-
+.cards .card{
+  transition: .3s linear;
+  -webkit-transition: .3s linear;
+  -moz-transition: .3s linear;
+  -ms-transition: .3s linear;
+  -o-transition: .3s linear;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px -2px #1018280F,0px 4px 8px -2px #1018281A;
+}
+.cards .card:hover{
+  background: linear-gradient(136.97deg, #DDB762 3.34%, #000000 225.23%);
+}
+.cards .card:hover .details h3,
+.cards .card:hover .details p,
+.cards .card:hover .rating p{
+  color: white !important;
+}
 @media screen and (max-width:768px){
   nav .links{
     position: absolute;
