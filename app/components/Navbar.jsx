@@ -1,15 +1,18 @@
+"use client";
 import React from 'react'
 import logo from "../../public/logo.png"
 import toggle from "../../public/Burger.svg"
 import Image from 'next/image'
+import { useState } from 'react';
 const Navbar = () => {
+    const [showToggle, setShowToggle] = useState(false)
   return (
     <nav className="flex justify-around items-center py-8">
         <div className="logo">
             <Image src={logo} alt="logo" />
         </div>
 
-        <div className="links">
+        <div className={`links ${showToggle? "show" :""}`}>
             <ul className="flex gap-[15px]">
                 <li className="text-[var(--nav-text-color)] font-bold text-[16px] leading-[16px]">
                     الرئيسية
@@ -32,7 +35,10 @@ const Navbar = () => {
             </ul>
         </div>
 
-        <div className="toogle">
+        <div 
+            className="toggle"
+            onClick={()=> setShowToggle(!showToggle)}
+        >
             <Image 
                 src={toggle}
                 alt="toggle-menu" 
